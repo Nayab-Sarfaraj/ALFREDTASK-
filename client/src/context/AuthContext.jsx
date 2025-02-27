@@ -9,11 +9,10 @@ export const AuthProvider = ({ children }) => {
     const login = async (email, password) => {
         try {
             const { data } = await axios.post("http://localhost:8080/user/login", { email, password })
-            console.log(data)
+          
             setUser(data.user)
             localStorage.setItem("user", JSON.stringify(data.user))
-            localStorage.setItem("ojk", "dadadasdasas")
-            console.log("herer")
+          
             return true
         } catch (error) {
             console.log(error)
@@ -27,7 +26,7 @@ export const AuthProvider = ({ children }) => {
     const register = async (name, email, password) => {
         try {
             const { data } = await axios.post("http://localhost:8080/user/register", { name, email, password })
-            console.log(data)
+      
             setUser(data.user)
             localStorage.setItem("user", JSON.stringify(user))
         } catch (error) {
@@ -47,7 +46,7 @@ export const AuthProvider = ({ children }) => {
             return true
 
         } catch (error) {
-            console.log(error)
+            
             if (!error.response?.data.success) {
                 toast.error(error.response.data.message)
             }
@@ -59,7 +58,7 @@ export const AuthProvider = ({ children }) => {
     const getUserProfile = async () => {
         try {
             const data = await axios.get("http://localhost:8080/user/me", { withCredentials: true })
-            console.log(data)
+           
             setUser(data.user)
         } catch (error) {
             console.log(error)

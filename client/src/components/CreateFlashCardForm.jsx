@@ -62,7 +62,7 @@ function CreateFlashcardForm() {
                         className="mt-1 p-2 w-full border rounded-md shadow-sm resize-none "
                         value={answer}
                         onChange={(e) => setAnswer(e.target.value)}
-                        rows="3" // Make it a textarea
+                        rows="3"
                     ></textarea>
                 </div>
                 <button
@@ -71,8 +71,8 @@ function CreateFlashcardForm() {
                 >
                     Create Flashcard
                 </button>
-            </form>
-        </div>
+            </form >
+        </div >
     );
 }
 

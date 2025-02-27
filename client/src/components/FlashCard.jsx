@@ -1,14 +1,13 @@
 import React, { useContext, useState } from 'react';
-import axios from 'axios';
-import { FlashcardContext } from '../context/FlashCardContext';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../context/AuthContext';
+import { FlashcardContext } from '../context/FlashCardContext';
 
 function FlashCard({ flashcard, key, setIsLoading, setCurrent }) {
     const [showAnswer, setShowAnswer] = useState(false);
     const { updateFlashcard, deleteFlashcard, getAllFlashCard } = useContext(FlashcardContext)
     const { user } = useContext(AuthContext)
-    // const [isCorrect, setIsCurrect] = useState(false)
+
 
 
     const handleCorrect = async () => {

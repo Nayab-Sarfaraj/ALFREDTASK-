@@ -25,8 +25,6 @@ export const register = async (req, res, next) => {
       },
     });
   } catch (error) {
-    console.log(error.message);
-    console.log("Error while registering the use");
     return next(new Errorhandler("Something went wrong", 500));
   }
 };
@@ -35,7 +33,7 @@ export const login = async (req, res, next) => {
   try {
     console.log("hererer");
     const { email, password } = req.body;
-    console.log(req.body);
+
     if (!email) return next(new Errorhandler("email is reuired", 401));
     if (!password) return next(new Errorhandler("password is required", 401));
     if (password.length < 8)
@@ -43,13 +41,11 @@ export const login = async (req, res, next) => {
     const user = await User.findOne({ email: email }).select("+password");
     if (!user) return next(new Errorhandler("Invalid email or password", 401));
     const result = await user.comparePassword(password);
-    console.log(result);
+
     if (!result)
       return next(new Errorhandler("Invalid email or password", 400));
     saveToken(user, res, 200);
   } catch (error) {
-    console.log(error.message);
-    console.log("Error while logging the use");
     return next(new Errorhandler("Something went wrong", 500));
   }
 };
@@ -96,7 +92,6 @@ export const updatePassword = async (req, res, next) => {
     const updatedUser = await user.save();
     return res.json({ success: true, user: updatedUser });
   } catch (error) {
-    console.log(error);
     return next(new Errorhandler("Something went wrong", 500));
   }
 };

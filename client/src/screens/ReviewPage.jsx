@@ -8,7 +8,7 @@ function ReviewPage() {
     const [current, setCurrent] = useState(0)
     const [isLoading, setIsLoading] = useState(true)
     const { user } = useContext(AuthContext);
-    console.log(user)
+   
 
     const fetchData = async () => {
         setIsLoading(true)
@@ -29,7 +29,7 @@ function ReviewPage() {
     const moveToNext = () => {
         if (current < flashcards.length - 1) setCurrent(curr => curr + 1)
     }
-    console.log(current)
+  
 
 
     return (

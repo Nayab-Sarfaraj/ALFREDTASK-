@@ -14,7 +14,6 @@ export const createFlashCard = async (req, res, next) => {
     });
     return res.status(200).json({ success: true, flashcard });
   } catch (error) {
-    console.log(error);
     return next(new Errorhandler("Something went wrong", 500));
   }
 };
@@ -34,7 +33,6 @@ export const getAllFlashCard = async (req, res, next) => {
 
     return res.json({ success: true, flashcards });
   } catch (error) {
-    console.log(error.message);
     return next(new Errorhandler("Something went wrong", 500));
   }
 };
@@ -50,7 +48,6 @@ export const deleteFlashCard = async (req, res, next) => {
       .status(200)
       .json({ success: true, message: "Successfully deleted the flash card" });
   } catch (error) {
-    console.log(error);
     return next(new Errorhandler("Something went wrong", 500));
   }
 };

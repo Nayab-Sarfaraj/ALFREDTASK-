@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+   
     const { login, user } = useContext(AuthContext)
     const navigate = useNavigate()
     useEffect(() => {
@@ -20,7 +20,7 @@ function LoginForm() {
         <div className="flex items-center justify-center min-h-screen ">
             <div className="bg-white p-8 rounded-lg shadow-md w-96">
                 <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
-                {error && <p className="text-red-500">{error}</p>}
+                
                 <form onSubmit={handleLogin}>
                     <div className="mb-4">
                         <label className="block text-sm font-semibold">Email</label>

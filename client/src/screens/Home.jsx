@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 
-import { Link } from 'react-router-dom';
-import { ThemeContext } from '../context/themeContext';
 import CreateFlashcardForm from '../components/CreateFlashCardForm';
 import { FlashcardContext } from '../context/FlashCardContext';
+import { ThemeContext } from '../context/themeContext';
 
 function HomePage() {
     const { toggleTheme } = useContext(ThemeContext)

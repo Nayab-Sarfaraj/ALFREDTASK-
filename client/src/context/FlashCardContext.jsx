@@ -9,11 +9,11 @@ export const FlashCardProvider = ({ children }) => {
 
     const getAllFlashCard = async (userID) => {
         try {
-            console.log("runn")
+            
             const { data } = await axios.get(`http://localhost:8080/flashcards/${userID}`)
 
             setFlashcards(data.flashcards)
-            console.log(data)
+         
 
 
         } catch (error) {
@@ -26,7 +26,7 @@ export const FlashCardProvider = ({ children }) => {
         try {
 
             const { data } = await axios.put(`http://localhost:8080/flashcards/${id}`, { isCorrect })
-            console.log(data)
+        
 
 
         } catch (error) {
@@ -39,7 +39,7 @@ export const FlashCardProvider = ({ children }) => {
         try {
 
             const { data } = await axios.delete(`http://localhost:8080/flashcards/${id}`)
-            console.log(data)
+      
 
 
         } catch (error) {
