@@ -23,7 +23,7 @@ This section explains how the Leitner System is implemented within the Flashcard
 
     *   Users create flashcards with a question and answer.
     *   Each new flashcard is automatically assigned to Box 1.
-    *   The flashcard's `question`, `answer`, initial `box` (Box 1), and a `nextReviewDate` are saved in MongoDB.
+    *   The flashcard's `question`, `answer`, initial `box` (Box 1), and a `nextReview` are saved in MongoDB.
 
 2. **The Leitner Box System:**
 
