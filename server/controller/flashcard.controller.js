@@ -3,14 +3,13 @@ import Errorhandler from "../utils/errorHandler.js";
 
 export const createFlashCard = async (req, res, next) => {
   try {
-    const { question, answer, subject, user } = req.body;
+    const { question, answer, user } = req.body;
     if (!question || !answer)
       return next(new Errorhandler("All fields are required", 401));
     const flashcard = await Flashcard.create({
       question,
       answer,
       user,
-      subject,
     });
     return res.status(200).json({ success: true, flashcard });
   } catch (error) {
@@ -20,9 +19,8 @@ export const createFlashCard = async (req, res, next) => {
 
 export const getAllFlashCard = async (req, res, next) => {
   try {
-    console.log("herereere");
     const { userID } = req.params;
-    console.log(userID);
+
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const tomorrow = new Date(today);
@@ -38,7 +36,6 @@ export const getAllFlashCard = async (req, res, next) => {
 };
 export const deleteFlashCard = async (req, res, next) => {
   try {
-    console.log("here");
     const { id } = req.params;
     const flashcard = await Flashcard.findById(id);
     if (!flashcard) return next(new Errorhandler("Flash card not found", 401));

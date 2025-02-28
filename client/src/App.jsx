@@ -4,15 +4,14 @@ import Home from './screens/Home'
 
 import { useContext, useEffect } from 'react'
 
-import axios from "axios"
+import Navbar from './components/Navbar'
+import { AuthContext } from './context/AuthContext'
+import { FlashcardContext } from './context/FlashCardContext'
 import { ThemeContext } from './context/themeContext'
 import Login from './screens/Login'
-import Registerater from './screens/Registerater'
-import { AuthContext } from './context/AuthContext'
 import ProtectedRoute from './screens/ProtectedRoute'
-import Navbar from './components/Navbar'
+import Registerater from './screens/Registerater'
 import ReviewPage from './screens/ReviewPage'
-import { FlashcardContext } from './context/FlashCardContext'
 
 function App() {
   const { theme } = useContext(ThemeContext);
