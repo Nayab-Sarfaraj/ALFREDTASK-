@@ -18,4 +18,4 @@ const flashCardScheduler = async () => {
   }
 };
 
-cron.schedule("*/20 * * * * * ", flashCardScheduler);
+cron.schedule("0 0 * * * ", flashCardScheduler);
